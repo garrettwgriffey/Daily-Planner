@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Jquery reference -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Moment reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <h2>Moment Date</h2>
+    <!-- container for Moment.js output -->
+    <div id="displayMoment"></div>
+
+      <div id="time-blocks">
+    
+      <script type="text/javascript">
+        (function () {
+          // instantiate a moment object
+          var NowMoment = moment();
+
+          // instantiate a JavaScript Date object
+          var NowDate = new Date();
+
+          // display value of moment object in #displayMoment div
+          var eDisplayMoment = document.getElementById('displayMoment');
+          eDisplayMoment.innerHTML = NowMoment;
+
+          // display value of Date object in #displayJsDate div
+          var eDisplayDate = document.getElementById('displayJsDate');
+          eDisplayDate.innerHTML = NowDate;
+        })();
+      </script>
+
+      <!-- display of current date -->
+      <!-- var NowMoment = moment();
+      var eDisplayMoment = document.getElementById('displayMoment');
+      eDisplayMoment.innerHTML = NowMoment.forward('YYYY-M-D'); -->
+      <!-- use id of current day for the current date and time -->
+      <p id="currentDay" class="lead"></p>
+    </div>
+  </div>
+  </header>
+
+  <div class="container">
+    <!-- Timeblocks go here -->
+    <script>
+    var workDayHours = ['8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm'];
+
+    function createTimeBlocks() {
+    let blocks = "time-blocks";
+    for (let i = 0; i < workDayHours.length; i++) { var hourBlocks="" + '<div class="input-group mb-3">'
+      + '<div class="input-group-prepend">' + '<span class="input-group-text">' + workDayHours[i] + '</span>' + '</div>'
+      + '<input type="text" class="form-control" id="' + workDayHours[i] + '">' + '<div class="input-group-append">'
+      + '<button class="btn btn-primary" data-time="' + workDayHours[i] + '"><i class="fa fa-save"></i></button>'
+      + '</div>' + '</div>' ; blocks +=hourBlocks; } $('#time-blocks').append(blocks); } 
+      createTimeBlocks();
+    </script>
+</body>
+
+</html>
