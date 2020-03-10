@@ -22,54 +22,19 @@
   <header class="jumbotron">
     <h1 class="display-3">Work Day Scheduler</h1>
     <p class="lead">A simple calendar app for scheduling your work day</p>
-    <h2>Moment Date</h2>
+    <h2>Today's Date</h2>
     <!-- container for Moment.js output -->
     <div id="displayMoment"></div>
+    <p id="currentDay" class="lead"></p>
 
       <div id="time-blocks">
-    
-      <script type="text/javascript">
-        (function () {
-          // instantiate a moment object
-          var NowMoment = moment();
+        <!-- time blocks go here -->
+      </div>
 
-          // instantiate a JavaScript Date object
-          var NowDate = new Date();
-
-          // display value of moment object in #displayMoment div
-          var eDisplayMoment = document.getElementById('displayMoment');
-          eDisplayMoment.innerHTML = NowMoment;
-
-          // display value of Date object in #displayJsDate div
-          var eDisplayDate = document.getElementById('displayJsDate');
-          eDisplayDate.innerHTML = NowDate;
-        })();
-      </script>
-
-      <!-- display of current date -->
-      <!-- var NowMoment = moment();
-      var eDisplayMoment = document.getElementById('displayMoment');
-      eDisplayMoment.innerHTML = NowMoment.forward('YYYY-M-D'); -->
-      <!-- use id of current day for the current date and time -->
-      <p id="currentDay" class="lead"></p>
-    </div>
-  </div>
   </header>
 
-  <div class="container">
-    <!-- Timeblocks go here -->
-    <script>
-    var workDayHours = ['8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm'];
 
-    function createTimeBlocks() {
-    let blocks = "time-blocks";
-    for (let i = 0; i < workDayHours.length; i++) { var hourBlocks="" + '<div class="input-group mb-3">'
-      + '<div class="input-group-prepend">' + '<span class="input-group-text">' + workDayHours[i] + '</span>' + '</div>'
-      + '<input type="text" class="form-control" id="' + workDayHours[i] + '">' + '<div class="input-group-append">'
-      + '<button class="btn btn-primary" data-time="' + workDayHours[i] + '"><i class="fa fa-save"></i></button>'
-      + '</div>' + '</div>' ; blocks +=hourBlocks; } $('#time-blocks').append(blocks); } 
-      createTimeBlocks();
-    </script>
+    <script src="assets/JS/app.js"></script>
 </body>
 
 </html>
