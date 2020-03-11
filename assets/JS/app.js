@@ -29,6 +29,8 @@ function createTimeBlocks() {
 
 createTimeBlocks();
 
+// local storage
+
 $("button").on("click", function(e) {
     e.preventDefault();
     localStorage.setItem("inputValue",JSON.stringify(userActivity))});
@@ -37,58 +39,59 @@ $("button").on("click", function(e) {
 
     var userActivity = JSON.parse(localStorage.getItem("inputValue"));
 
+    $("#8am").on('click', function () {
+        var userInput = $("#8am-input").val();
+        console.log(userInput)
+        localStorage.setItem("8am", userInput)
+    })
+    $("#9am").on('click', function () {
+        var userInput = $("#9am-input").val();
+        console.log(userInput)
+        localStorage.setItem("9am", userInput)
+    })
+    $("#10am").on('click', function () {
+        var userInput = $("#10am-input").val();
+        console.log(userInput)
+        localStorage.setItem("10am", userInput)
+    })
+    $("#11am").on('click', function () {
+        var userInput = $("#11am-input").val();
+        console.log(userInput);
+        localStorage.setItem("11am", userInput);
+    })
+    $("#12pm").on('click', function () {
+        var userInput = $("#12pm-input").val();
+        console.log(userInput);
+        localStorage.setItem("12pm", userInput);
+    })
+    $("#1pm").on('click', function () {
+        var userInput = $("#1pm-input").val();
+        console.log(userInput);
+        localStorage.setItem("1pm", userInput);
+    })
+    $("#2pm").on('click', function () {
+        var userInput = $("#2pm-input").val();
+        console.log(userInput);
+        localStorage.setItem("2pm", userInput);
+    })
+    $("#3pm").on('click', function () {
+        var userInput = $("#3pm-input").val();
+        console.log(userInput);
+        localStorage.setItem("3pm", userInput);
+    })
+    $("#4pm").on('click', function () {
+        var userInput = $("#4pm-input").val();
+        console.log(userInput);
+        localStorage.setItem("4pm", userInput);
+    })
+    $("#5pm").on('click', function () {
+        var userInput = $("#5pm-input").val();
+        console.log(userInput);
+        localStorage.setItem("5pm", userInput);
+    })
+    
 });
 
 console.log(inputValue);
 
-// alecs example
-$("#8am").on('click', function () {
-    var userInput = $("#8am-input").val();
-    console.log(userInput)
-    localStorage.setItem("8am", userInput)
-})
-$("#9am").on('click', function () {
-    var userInput = $("#9am-input").val();
-    console.log(userInput)
-    localStorage.setItem("9am", userInput)
-})
-$("#10am").on('click', function () {
-    var userInput = $("#10am-input").val();
-    console.log(userInput)
-    localStorage.setItem("10am", userInput)
-})
-$("#11am").on('click', function () {
-    var userInput = $("#11am-input").val();
-    console.log(userInput);
-    localStorage.setItem("11am", userInput);
-})
-$("#12pm").on('click', function () {
-    var userInput = $("#12pm-input").val();
-    console.log(userInput);
-    localStorage.setItem("12pm", userInput);
-})
-$("#1pm").on('click', function () {
-    var userInput = $("#1pm-input").val();
-    console.log(userInput);
-    localStorage.setItem("1pm", userInput);
-})
-$("#2pm").on('click', function () {
-    var userInput = $("#2pm-input").val();
-    console.log(userInput);
-    localStorage.setItem("2pm", userInput);
-})
-$("#3pm").on('click', function () {
-    var userInput = $("#3pm-input").val();
-    console.log(userInput);
-    localStorage.setItem("3pm", userInput);
-})
-$("#4pm").on('click', function () {
-    var userInput = $("#4pm-input").val();
-    console.log(userInput);
-    localStorage.setItem("4pm", userInput);
-})
-$("#5pm").on('click', function () {
-    var userInput = $("#5pm-input").val();
-    console.log(userInput);
-    localStorage.setItem("5pm", userInput);
-})
+
