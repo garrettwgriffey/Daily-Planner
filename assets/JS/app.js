@@ -2,8 +2,9 @@ $(document).ready(function () {
     var nowMoment = moment();
     var currentHour = moment().hour();
 
+    // time and date
     $("#displayMoment").text(nowMoment);
-    // var planner = "Work Day Scheduler";
+   
     var userActivity = [];
 
 
@@ -29,40 +30,53 @@ $(document).ready(function () {
 
 
     // button click event
-    $("#time-blocks").on("click", ".btn", function (e) {
-        var userInput = $(this).val();
-        var task = document.getElementById(userInput).value;
-        console.log(task);
-    });
-
+    // $("#time-blocks").on("click", ".btn", function (e) {
+    //     var userInput = $(this).val();
+    //     var task = document.getElementById(userInput).value;
+    //     console.log(task);
+    // });
+    
+    // $("button").on("click", function(e) {
+    //     e.preventDefault();
+    //     localStorage.setItem("form-control", JSON.stringify(userActivity))
+    // });
+    
+    var userActivity = JSON.parse(localStorage.getItem("userInput"));
+    
     //colored input fields
-    for (i = 0; i < workDayHours.length; i++) {
+   
+        for (i = 0; i < workDayHours.length; i++) {
 
-        if (currentHour === workDayHours[i]) {
-            $("#" + workDayHours[i]).addClass('present');
-        }
-        if (currentHour > workDayHours[i]) {
-            $("#" + workDayHours[i]).addClass('past');
-        }
-        if (currentHour < workDayHours[i]) {
-            $("#" + workDayHours[i]).addClass('future');
-        }
-console.log(test)
-    }
+            if (currentHour === workDayHours[i]) {
+                $("#" + workDayHours[i]).addClass('present');
+            }
+            if (currentHour > workDayHours[i]) {
+                $("#" + workDayHours[i]).addClass('past');
+            }
+            if (currentHour < workDayHours[i]) {
+                $("#" + workDayHours[i]).addClass('future');
+            }
 
+        }
 
+// i started to go this route with individual time inputs but tried to do it more concisely above with no success
+        $("#8:00am").on('click', function () {
+            var userInput = $("#8:00am-input").val();;
+            console.log(userInput)
+            localStorage.setItem("8:am", userInput)
+        })
+        $("#9am").on('click', function () {
+            var userInput = $("#9am-input").val();;
+            console.log(userInput)
+            localStorage.setItem("9am", userInput)
+        })
+        $("#10am").on('click', function () {
+            var userInput = $("#10am-input").val();;
+            console.log(userInput)
+            localStorage.setItem("10am", userInput)
+        })
 
 });
-
-$("button").on("click", function(e) {
-    e.preventDefault();
-    localStorage.setItem("inputValue",JSON.stringify(userActivity))});
-
-
-
-    var userActivity = JSON.parse(localStorage.getItem("inputValue"));
-
-// });
 
 
 
